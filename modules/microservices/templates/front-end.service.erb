@@ -1,0 +1,18 @@
+[Unit]
+Description=NewsFeed Front-End Service
+
+[Service]
+Type=simple
+
+Environment=APP_PORT=8001
+Environment=STATIC_URL=http://<%= @fqdn %>:8000/
+Environment=QUOTE_SERVICE_URL=http://<%= @fqdn %>:8002/
+Environment=NEWSFEED_SERVICE_URL=http://<%= @fqdn %>:8003/
+Environment=NEWSFEED_SERVICE_TOKEN=T1&eWbYXNWG1w1^YGKDPxAWJ@^et^&kX
+
+User=root
+SuccessExitStatus=143
+ExecStart=/usr/bin/java -jar /usr/share/infra-problem/build/front-end.jar
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=NewsFeed Aggregation Service
+
+[Service]
+Type=simple
+
+Environment=APP_PORT=8003
+
+User=root
+SuccessExitStatus=143
+ExecStart=/usr/bin/java -jar /usr/share/infra-problem/build/newsfeed.jar
+
+[Install]
+WantedBy=default.target

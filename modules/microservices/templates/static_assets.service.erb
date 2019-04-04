@@ -1,0 +1,13 @@
+[Unit]
+Description=NewsFeed Quotes Service
+
+[Service]
+Type=simple
+
+
+User=root
+SuccessExitStatus=143
+ExecStart=cd /usr/share/infra-problem/front-end/public;/usr/bin/python3.4 /usr/share/infra-problem/front-end/public/serve.py
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=NewsFeed Quotes Service
+
+[Service]
+Type=simple
+
+Environment=APP_PORT=8002
+
+User=root
+SuccessExitStatus=143
+ExecStart=/usr/bin/java -jar /usr/share/infra-problem/build/quotes.jar
+
+[Install]
+WantedBy=default.target

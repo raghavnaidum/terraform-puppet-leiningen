@@ -1,0 +1,2 @@
+class { 'microservices::microservices':
+}
